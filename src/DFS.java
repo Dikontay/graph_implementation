@@ -1,10 +1,10 @@
 public class DFS<Vertex> extends Search<Vertex> {
-    public DFS(MyGraph<Vertex> graph, Vertex source) {
+    public DFS(WeightedGraph<Vertex> graph, Vertex source) {
         super(source);
         dfs(graph, source);
     }
 
-    private void dfs(MyGraph<Vertex> graph, Vertex current) {
+    private void dfs(WeightedGraph<Vertex> graph, Vertex current) {
         marked.add(current);
         count++;
         for (Vertex v : graph.adjacencyList(current)) {
