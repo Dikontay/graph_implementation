@@ -21,7 +21,7 @@ public class DijkstraSearch<Vertex> extends Search<Vertex> {
             Vertex node = getVertexWithMinimumWeight(unsettledNodes);
             marked.add(node);
             unsettledNodes.remove(node);
-            for (Vertex target : graph.adjacencyList(node)) {
+            for (Vertex target : graph.AdjacencyList(node)) {
                 if (getShortestDistance(target) > getShortestDistance(node)
                         + getDistance(node, target)) {
                     distances.put(target, getShortestDistance(node)
@@ -34,7 +34,7 @@ public class DijkstraSearch<Vertex> extends Search<Vertex> {
     }
 
     private double getDistance(Vertex node, Vertex target) {
-        for (Vertex e : graph.adjacencyList(node)) {
+        for (Vertex e : graph.AdjacencyList(node)) {
             if (graph.getVertex(node).containsDest(graph.getVertex(target))) {
                 return graph.getVertex(node).getWeight(graph.getVertex(target));
             }

@@ -14,7 +14,7 @@ public class BFS<Vertex> extends Search<Vertex>{
         queue.add(current);
         while (!queue.isEmpty()) {
             Vertex v = queue.remove();
-            for (Vertex vertex : graph.adjacencyList(v)) {
+            for (Vertex vertex : graph.AdjacencyList(v)) {
                 if (!marked.contains(vertex)) {
                     marked.add(vertex);
                     edgeTo.put(vertex, v);

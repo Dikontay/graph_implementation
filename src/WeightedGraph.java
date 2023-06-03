@@ -47,8 +47,9 @@ public class WeightedGraph<V> {
 
        return map.containsKey(data);
     }
-    public Iterable<V> adjacencyList(V v) {
-        if (!hasVertex(v)) return null;
+    public Iterable<V> AdjacencyList(V v) {
+        if (!hasVertex(v))
+            return null;
         return map.get(v).getAdjacencyList();
     }
 

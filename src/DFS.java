@@ -7,7 +7,7 @@ public class DFS<Vertex> extends Search<Vertex> {
     private void dfs(WeightedGraph<Vertex> graph, Vertex current) {
         marked.add(current);
         count++;
-        for (Vertex v : graph.adjacencyList(current)) {
+        for (Vertex v : graph.AdjacencyList(current)) {
             if (!marked.contains(v)) {
                 edgeTo.put(v, current);
                 dfs(graph, v);
