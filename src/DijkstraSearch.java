@@ -35,8 +35,10 @@ public class DijkstraSearch<Vertex> extends Search<Vertex> {
 
     private double getDistance(Vertex node, Vertex target) {
         for (Vertex e : graph.adjacencyList(node)) {
-            if (edge.getDest().equals(target))
-                return edge.getWeight();
+            if (graph.getVertex(node).containsDest(graph.getVertex(target))) {
+                return graph.getVertex(node).getWeight(graph.getVertex(target));
+            }
+
         }
 
         throw new RuntimeException("Not found!");

@@ -51,6 +51,15 @@ public class WeightedGraph<V> {
         if (!hasVertex(v)) return null;
         return map.get(v).getAdjacencyList();
     }
+
+    public Map<V, Vertex<V>> getMap() {
+        return map;
+    }
+
+    public Vertex<V> getVertex(V v){
+        return map.get(v);
+    }
+
     public boolean hasEdge(V source, V dest) {
         if (!hasVertex(source)) return false;
         return map.get(source).containsDest(new Vertex<>(dest));

@@ -3,12 +3,12 @@ import java.util.Queue;
 
 public class BFS<Vertex> extends Search<Vertex>{
 
-    public BFS(MyGraph<Vertex> graph, Vertex source) {
+    public BFS(WeightedGraph<Vertex> graph, Vertex source) {
         super(source);
         bfs(graph, source);
     }
 
-    private void bfs(MyGraph<Vertex> graph, Vertex current) {
+    private void bfs(WeightedGraph<Vertex> graph, Vertex current) {
         marked.add(current);
         Queue<Vertex> queue = new LinkedList<>();
         queue.add(current);
@@ -23,5 +23,7 @@ public class BFS<Vertex> extends Search<Vertex>{
             }
         }
     }
+
+
 }
 
